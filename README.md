@@ -53,7 +53,7 @@ module "faasd" {
 |------|-------------|------|---------|:--------:|
 | basic\_auth\_password | The basic auth password, if left empty, a random password is generated. | `string` | `null` | no |
 | basic\_auth\_user | The basic auth user name. | `string` | `""` | no |
-| domain | A public domain for the faasd instance. This will the use of Caddy and a Let's Encrypt certificate | `string` | `""` | no |
+| domain | A public domain for the faasd instance. This will be consumed by Caddy and install a Let's Encrypt certificate. | `string` | `""` | no |
 | email | Email used to order a certificate from Let's Encrypt | `string` | `""` | no |
 | instance\_type | The instance type to use for the instance. | `string` | `""` | no |
 | ssh\_key\_name | Key name of the Key Pair to use for the instance. | `string` | `""` | yes |
