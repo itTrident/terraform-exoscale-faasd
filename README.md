@@ -28,14 +28,14 @@ module "faasd" {
 |------|---------|
 | terraform | >= 1.1.7 |
 | exoscale | >= 0.35 |
-| random | >=3.1.2 |
+| random | >= 3.1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | exoscale | >= 0.35 |
-| random | >=3.1.2 |
+| random | >= 3.1.2 |
 
 ## Resources
 
