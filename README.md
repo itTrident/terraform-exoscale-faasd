@@ -56,6 +56,7 @@ module "faasd" {
 | domain | A public domain for the faasd instance. This will be consumed by Caddy and install a Let's Encrypt certificate. | `string` | `""` | no |
 | email | Email used to order a certificate from Let's Encrypt | `string` | `""` | no |
 | instance\_type | The instance type to use for the instance. | `string` | `""` | no |
+| lables | A map of key/value labels. | `map` | `""` | no |
 | ssh\_key\_name | Key name of the Key Pair to use for the instance. | `string` | `""` | yes |
 | ssh\_pub\_key | Public Key Pair to use for the instance. | `string` | `""` | yes |
 | name | The name of the faasd instance. | `string` | `""` | yes |

@@ -36,6 +36,7 @@ resource "exoscale_compute_instance" "faasd" {
   zone               = var.zone
   name               = var.name
   type               = var.instance_type
+  labels             = var.labels
   template_id        = data.exoscale_compute_template.ubuntu.id
   disk_size          = var.disk
   security_group_ids = [exoscale_security_group.faasd.id]

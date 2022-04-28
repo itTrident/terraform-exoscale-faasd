@@ -1,4 +1,3 @@
-
 variable "basic_auth_user" {
   description = "The basic auth user name."
   type        = string
@@ -40,6 +39,11 @@ variable "instance_type" {
   description = "The instance type to use for the instance."
   type        = string
   default     = "standard.micro"
+}
+
+variable "labels" {
+  description = "A map of key/value labels."
+  type        = map(string)
 }
 
 variable "disk" {
