@@ -44,29 +44,12 @@ resource "exoscale_compute_instance" "faasd" {
   user_data          = templatefile("${path.module}/templates/startup.sh", local.user_data_vars)
 }
 
-resource "exoscale_security_group_rule" "ssh" {
+resource "exoscale_security_group_rule" "firewall_rules" {
+  count             = length("${var.firewall_rules}")
   security_group_id = exoscale_security_group.faasd.id
   type              = "INGRESS"
-  protocol          = "TCP"
+  protocol          = var.firewall_rules[count.index].protocol
   cidr              = "0.0.0.0/0"
-  start_port        = 22
-  end_port          = 22
-}
-
-resource "exoscale_security_group_rule" "http" {
-  security_group_id = exoscale_security_group.faasd.id
-  type              = "INGRESS"
-  protocol          = "TCP"
-  cidr              = "0.0.0.0/0"
-  start_port        = 8080
-  end_port          = 8080
-}
-
-resource "exoscale_security_group_rule" "https" {
-  security_group_id = exoscale_security_group.faasd.id
-  type              = "INGRESS"
-  protocol          = "TCP"
-  cidr              = "0.0.0.0/0"
-  start_port        = 443
-  end_port          = 443
+  start_port        = var.firewall_rules[count.index].start_port
+  end_port          = var.firewall_rules[count.index].end_port
 }

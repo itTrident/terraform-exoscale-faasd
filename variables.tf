@@ -70,6 +70,12 @@ variable "domain" {
   default     = ""
 }
 
+variable "firewall_rules" {
+  description = "List out the port number and protocall to allow in Firewall Rules"
+  type        = list(any)
+  default     = [{ protocol = "tcp", start_port = "22", end_port = "22" }, { protocol = "tcp", start_port = "8080", end_port = "8080" }, { protocol = "tcp", start_port = "443", end_port = "443" }]
+}
+
 variable "exoscale_api_key" {
   description = "API key for Exoscale"
   type        = string

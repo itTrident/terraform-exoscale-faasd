@@ -9,7 +9,7 @@ output "basic_auth_user" {
 
 output "basic_auth_password" {
   sensitive = true
-  value     = local.basic_auth_password
+  value     = "/var/lib/faasd/secrets/basic-auth-password"
 }
 
 output "ipv4_address" {
